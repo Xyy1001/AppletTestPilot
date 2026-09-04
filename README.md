@@ -1420,7 +1420,7 @@ After:   onLoad → refresh (仅读取,快速返回) → 首次渲染完成
 #### 修复 5-6：AppID 策略 — 真实 AppID → touristappid → 空字符串
 
 ```
-wx1001263beba76a16  →  基础库调用 webapi_getwxaasyncsecinfo  →  Failed to fetch
+wxID  →  基础库调用 webapi_getwxaasyncsecinfo  →  Failed to fetch
 touristappid        →  DevTools 手动打开 OK，但 cli.bat auto 拒绝
 "" (空字符串)       →  无 AppID 本地模式，DevTools + cli.bat 均接受，完全离线
 ```
@@ -1638,54 +1638,4 @@ Planner.plan()
       ├─ _normalize_attrs(): Minium 属性 4 格式统一
       ├─ observe(): 双查询分离 WebView + native
       └─ _parse_response(): 3 层 JSON 提取 (code block → raw → brace match)
-```
-
-### Planner 完整提示词
-
-**System**（短指令，~300 chars）：
-
-```
-You control a WeChat Mini Program to complete a testing task. Output ONE action as JSON:
-{
-  "action_type": "click|input|scroll|back|switch_tab|wait|verify|done",
-  "target": "exact element text",
-  "input_text": "text to type (required for input)",
-  "reasoning": "brief reason",
-  "expected_outcome": "what should happen"
-}
-
-FORM PAGE RULES (highest priority):
-- You are on a FORM page. Your ONLY job is to FILL EVERY FIELD then SAVE.
-- Fill fields ONE AT A TIME in this exact order:
-  Merchant form: 1)Type name  2)Type phone  3)Type intro  4)Click save
-  Product form:  1)Type title  2)Type price  3)Type desc  4)Click save
-- NEVER click save until ALL fields are filled.
-- NEVER do negative testing (no clicking save on empty form).
-- If you just navigated to a form, start by typing the FIRST field.
-- If recent actions show you typed some fields, type the NEXT unfilled field.
-- Only click save AFTER all fields are typed.
-
-GENERAL RULES:
-- Complete the task goal as efficiently as possible.
-- Never repeat an action that just succeeded.
-- If stuck, scroll to find more content.
-- Use "done" only when the task goal is fully achieved.
-```
-
-**User**（动态拼接，~1000 chars）：
-
-```
-Current page: /pages/vendor/join [form]
-On screen: 创建商家账户, 信息仅保存在本机, 商家名称, 手机号, 简介, 保存, ...
-VLM: "Page title '创建商家账户'. Fields: 商家名称 (empty), 手机号 (empty), 简介 (empty)..."
-
-Goal: 从首页点击创建商家,填写商家名称/手机号/简介,点击保存,验证返回首页
-Step 6 | 5 OK | 1 failed
-Recent: /pages/index/index (home), /pages/vendor/join (form)
-Allowed: click, input, scroll, back, wait, verify
-
-App info: Pages: /pages/index/index -> click product cards... /pages/vendor/join -> FILL: name, phone, intro -> click save ...
-Rules: 1 merchant only; phone=11 digits; price>0; cart qty 1-999
-
-Next action (JSON only):
 ```
