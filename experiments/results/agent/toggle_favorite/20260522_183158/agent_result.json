@@ -1,0 +1,89 @@
+{
+  "task": {
+    "id": "toggle_favorite",
+    "name": "Toggle Favorite",
+    "difficulty": "easy",
+    "setup": "launch_home_with_merchant_and_product"
+  },
+  "result": {
+    "task_completed": false,
+    "total_steps": 5,
+    "successful_steps": 3,
+    "failed_steps": 2,
+    "bug_count": 2,
+    "total_duration_s": 131.3,
+    "total_tokens": 5042
+  },
+  "coverage": {
+    "total_steps": 5,
+    "successful": 3,
+    "failed": 2,
+    "unique_pages": 2,
+    "total_pages_known": 2,
+    "total_edges": 5,
+    "failure_patterns": {
+      "assertion": 2
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "Click '去上传产品'",
+      "reasoning": "当前页面显示暂无商品，提示需要先在'我的'里创建商家账户并上传产品。点击'去上传产品'按钮，预期会跳转到上传或'我的'页面，以便创建商家和产品，为后续进入产品详情并收藏做准备。",
+      "passed": false,
+      "oracle_layer": "semantic",
+      "duration_s": 26.7,
+      "tokens": 868
+    },
+    {
+      "step": 2,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 20.2,
+      "tokens": 0
+    },
+    {
+      "step": 3,
+      "action": "Go back",
+      "reasoning": "当前页面是产品编辑表单，但目标需要进入产品详情页并切换收藏星标。通过返回回到首页，然后从产品列表进入详情页。",
+      "passed": false,
+      "oracle_layer": "semantic",
+      "duration_s": 24.5,
+      "tokens": 834
+    },
+    {
+      "step": 4,
+      "action": "Verify page state",
+      "reasoning": "",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 18.9,
+      "tokens": 0
+    },
+    {
+      "step": 5,
+      "action": "Click '上传产品'",
+      "reasoning": "首页无商品，需要先创建产品。点击上传产品按钮进入商品编辑页面以创建产品，之后才能查看商品详情并操作收藏。",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 26.0,
+      "tokens": 819
+    }
+  ],
+  "failures": [
+    {
+      "step": 1,
+      "category": "state_inconsistency",
+      "severity": "high",
+      "hypothesis": "Page state after 'Click '去上传产品'' is inconsistent with expectation"
+    },
+    {
+      "step": 3,
+      "category": "state_inconsistency",
+      "severity": "medium",
+      "hypothesis": "Page state after 'Go back' is inconsistent with expectation"
+    }
+  ]
+}

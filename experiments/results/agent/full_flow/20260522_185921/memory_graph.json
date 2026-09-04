@@ -1,0 +1,219 @@
+{
+  "pages": {
+    "/pages/cart/cart": {
+      "route": "/pages/cart/cart",
+      "semantic_role": "cart",
+      "business_function": "cart_management",
+      "risk_level": "high",
+      "visit_count": 4,
+      "first_seen_step": 0,
+      "last_seen_step": 3
+    },
+    "/pages/index/index": {
+      "route": "/pages/index/index",
+      "semantic_role": "home",
+      "business_function": "product_browsing",
+      "risk_level": "low",
+      "visit_count": 1,
+      "first_seen_step": 4,
+      "last_seen_step": 4
+    },
+    "/pages/tabbar/user": {
+      "route": "/pages/tabbar/user",
+      "semantic_role": "profile",
+      "business_function": "merchant_center",
+      "risk_level": "low",
+      "visit_count": 12,
+      "first_seen_step": 5,
+      "last_seen_step": 27
+    },
+    "/pages/vendor/product_edit": {
+      "route": "/pages/vendor/product_edit",
+      "semantic_role": "form",
+      "business_function": "product_management",
+      "risk_level": "high",
+      "visit_count": 14,
+      "first_seen_step": 11,
+      "last_seen_step": 30
+    }
+  },
+  "edges": [
+    {
+      "src": "/pages/cart/cart",
+      "dst": "/pages/cart/cart",
+      "action": "Click '去首页挑选一些商品吧'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/cart/cart",
+      "dst": "/pages/cart/cart",
+      "action": "Verify page state",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/cart/cart",
+      "dst": "/pages/cart/cart",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/cart/cart",
+      "dst": "/pages/index/index",
+      "action": "Switch to '首页'",
+      "semantic_type": "tab_switch",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/tabbar/user",
+      "action": "Switch to '我的'",
+      "semantic_type": "tab_switch",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/tabbar/user",
+      "action": "Verify page state",
+      "semantic_type": "interact",
+      "success_count": 3,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/tabbar/user",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 5,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Click '上传产品'",
+      "semantic_type": "navigate",
+      "success_count": 2,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/product_edit",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Type '测试键盘' into '产品名称'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/product_edit",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 8,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/product_edit",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Verify page state",
+      "semantic_type": "interact",
+      "success_count": 2,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/product_edit",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Type '99.00' into '价格'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/product_edit",
+      "dst": "/pages/tabbar/user",
+      "action": "Click '保存产品'",
+      "semantic_type": "submit",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/tabbar/user",
+      "action": "Click '测试键盘'",
+      "semantic_type": "interact",
+      "success_count": 2,
+      "failure_count": 0,
+      "success_rate": 1.0
+    }
+  ],
+  "failures": [
+    {
+      "step": 1,
+      "route": "/pages/cart/cart",
+      "action": "Click '去首页挑选一些商品吧'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    },
+    {
+      "step": 4,
+      "route": "/pages/index/index",
+      "action": "Switch to '首页'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    },
+    {
+      "step": 11,
+      "route": "/pages/vendor/product_edit",
+      "action": "Click '上传产品'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    },
+    {
+      "step": 12,
+      "route": "/pages/vendor/product_edit",
+      "action": "Type '测试键盘' into '产品名称'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    },
+    {
+      "step": 21,
+      "route": "/pages/vendor/product_edit",
+      "action": "Type '99.00' into '价格'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    },
+    {
+      "step": 22,
+      "route": "/pages/tabbar/user",
+      "action": "Click '保存产品'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    }
+  ],
+  "stats": {
+    "total_steps": 30,
+    "successful": 24,
+    "failed": 6,
+    "unique_pages": 4,
+    "total_edges": 14
+  }
+}

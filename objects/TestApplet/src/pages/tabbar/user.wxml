@@ -1,0 +1,90 @@
+<view class="tap-ripple-overlay" wx:if="{{_tapFx}}">
+  <block wx:for="{{_tapFx.sparks}}" wx:key="id">
+    <view class="tap-spark"
+      style="left: {{_tapFx.x}}px; top: {{_tapFx.y}}px; background: {{item.c}}; animation: sparkFly 0.4s ease-out forwards; animation-delay: {{item.d}}s;"
+    ></view>
+  </block>
+  <view class="tap-ripple-ring"
+    style="left: {{_tapFx.x}}px; top: {{_tapFx.y}}px; animation: rippleExpand 0.45s ease-out forwards;"
+  ></view>
+</view>
+<view class="page" bindtap="_tap">
+  <view class="container">
+    <view class="card">
+      <view class="row-between">
+        <view>
+          <view class="title">商家中心</view>
+          <view class="subtitle">创建账户、上传产品、管理展示</view>
+        </view>
+      </view>
+
+      <view class="divider"></view>
+
+      <view wx:if="{{!merchant}}">
+        <view class="subtitle">未创建商家账户</view>
+        <view style="height: 16rpx;"></view>
+        <button class="btn btn-primary" bindtap="onCreateMerchant">创建商家账户</button>
+      </view>
+
+      <view wx:else>
+        <view class="merchant-name">{{merchant.name}}</view>
+        <view class="subtitle">手机号：{{merchant.phone}}</view>
+        <view style="height: 16rpx;"></view>
+        <button class="btn btn-primary" bindtap="onUploadProduct">上传产品</button>
+      </view>
+    </view>
+
+    <view class="card mt" wx:if="{{merchant}}">
+      <view class="row-between">
+        <view class="title s-title">我的产品</view>
+        <view class="subtitle">{{myProducts.length}} 个</view>
+      </view>
+      <view class="divider"></view>
+      <view wx:if="{{myProducts.length === 0}}" class="subtitle">还没有上传产品</view>
+      <view wx:for="{{myProducts}}" wx:key="id" class="p-row">
+        <view class="p-left">
+          <image class="p-cover" src="{{item.images && item.images[0] ? item.images[0] : '/images/cart.jpg'}}" mode="aspectFill"></image>
+        </view>
+        <view class="p-mid">
+          <view class="p-title">{{item.title}}</view>
+          <view class="row-between">
+            <view class="price">¥ {{item.price}}</view>
+            <view class="subtitle">库存/物流未启用</view>
+          </view>
+        </view>
+        <view class="p-actions">
+          <view class="p-action tap" data-id="{{item.id}}" bindtap="onEditProduct">编辑</view>
+          <view class="p-action danger tap" data-id="{{item.id}}" bindtap="onDeleteProduct">删除</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card mt">
+      <view class="row-between">
+        <view class="title s-title">收藏</view>
+        <view class="subtitle">{{favorites.length}} 个</view>
+      </view>
+      <view class="divider"></view>
+      <view wx:if="{{favorites.length === 0}}" class="subtitle">暂无收藏</view>
+      <view wx:for="{{favorites}}" wx:key="id" class="fav-row tap" data-id="{{item.id}}" bindtap="onTapFavorite">
+        <image class="fav-cover" src="{{item.images && item.images[0] ? item.images[0] : '/images/cart.jpg'}}" mode="aspectFill"></image>
+        <view class="fav-mid">
+          <view class="fav-title">{{item.title}}</view>
+          <view class="price">¥ {{item.price}}</view>
+        </view>
+        <image class="arrow" src="/images/arrow.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <view class="card mt">
+      <view class="row-between">
+        <view>
+          <view class="title s-title">快捷客服</view>
+          <view class="subtitle">电话/微信/邮箱（本地配置）</view>
+        </view>
+        <button class="btn btn-ghost kefu" bindtap="onSupport">联系</button>
+      </view>
+    </view>
+  </view>
+</view>
+

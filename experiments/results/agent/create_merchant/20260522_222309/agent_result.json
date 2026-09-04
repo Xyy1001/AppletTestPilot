@@ -1,0 +1,101 @@
+{
+  "task": {
+    "id": "create_merchant",
+    "name": "Create Merchant Account",
+    "difficulty": "easy",
+    "setup": "launch_home"
+  },
+  "result": {
+    "task_completed": true,
+    "total_steps": 8,
+    "successful_steps": 8,
+    "failed_steps": 0,
+    "bug_count": 0,
+    "total_duration_s": 156.1,
+    "total_tokens": 0
+  },
+  "coverage": {
+    "total_steps": 8,
+    "successful": 8,
+    "failed": 0,
+    "unique_pages": 2,
+    "total_pages_known": 2,
+    "total_edges": 3,
+    "failure_patterns": {}
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "Click '创建商家'",
+      "reasoning": "On the home page, to start creating a merchant account, we need to navigate to the vendor join form. The '创建商家' button is visible and triggers navigation to /pages/vendor/join.",
+      "passed": true,
+      "oracle_layer": "structural",
+      "duration_s": 17.0,
+      "tokens": 0
+    },
+    {
+      "step": 2,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.8,
+      "tokens": 0
+    },
+    {
+      "step": 3,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.1,
+      "tokens": 0
+    },
+    {
+      "step": 4,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.9,
+      "tokens": 0
+    },
+    {
+      "step": 5,
+      "action": "Type '测试商家' into '例如：某某品牌官方店'",
+      "reasoning": "当前在创建商家表单页，需要填写所有字段后再保存。第一个字段是商家名称，输入框占位符为'例如：某某品牌官方店'，先输入测试名称。",
+      "passed": true,
+      "oracle_layer": "visual",
+      "duration_s": 15.4,
+      "tokens": 0
+    },
+    {
+      "step": 6,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 16.1,
+      "tokens": 0
+    },
+    {
+      "step": 7,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.3,
+      "tokens": 0
+    },
+    {
+      "step": 8,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 18.0,
+      "tokens": 0
+    }
+  ],
+  "failures": []
+}

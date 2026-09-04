@@ -1,0 +1,76 @@
+{
+  "pages": {
+    "/pages/index/index": {
+      "route": "/pages/index/index",
+      "semantic_role": "home",
+      "business_function": "product_browsing",
+      "risk_level": "low",
+      "visit_count": 1,
+      "first_seen_step": 0,
+      "last_seen_step": 0
+    },
+    "/pages/vendor/join": {
+      "route": "/pages/vendor/join",
+      "semantic_role": "form",
+      "business_function": "merchant_creation",
+      "risk_level": "low",
+      "visit_count": 8,
+      "first_seen_step": 1,
+      "last_seen_step": 8
+    }
+  },
+  "edges": [
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/vendor/join",
+      "action": "Click '去创建商家'",
+      "semantic_type": "navigate",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Type '美味小吃店' into '例如：某某品牌官方店'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Verify page state",
+      "semantic_type": "interact",
+      "success_count": 2,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 4,
+      "failure_count": 0,
+      "success_rate": 1.0
+    }
+  ],
+  "failures": [
+    {
+      "step": 2,
+      "route": "/pages/vendor/join",
+      "action": "Type '美味小吃店' into '例如：某某品牌官方店'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    }
+  ],
+  "stats": {
+    "total_steps": 8,
+    "successful": 7,
+    "failed": 1,
+    "unique_pages": 2,
+    "total_edges": 4
+  }
+}

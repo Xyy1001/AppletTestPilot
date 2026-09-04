@@ -1,0 +1,37 @@
+# AppletTestPilot Configuration
+# ==============================
+
+# Screenshot backend: "minium" (default) or "pyautogui" (for native dialogs)
+screenshot_backend: "minium"
+
+# Executor settings
+executor:
+  max_tries: 3           # Max assertion generation attempts
+  max_step_retries: 1    # Retry transient errors per step (0 = disabled)
+
+# VLM client (GLM-4.1V for screenshot analysis)
+vlm:
+  model: ""              # Uses GUI_GROUNDING_MODEL_NAME from .env
+  temperature: 0.3
+  max_tokens: 1024
+
+# LLM client for assertion code generation
+llm_assertion:
+  model: ""              # Uses OPENAI_MODEL_NAME from .env
+  temperature: 0.3
+  max_tokens: 1024
+  max_retries: 3
+
+# LLM client for exploration / action proposal
+llm_explore:
+  model: ""              # Uses OPENAI_MODEL_NAME from .env
+  temperature: 0.5
+  max_tokens: 512
+  max_retries: 3
+
+# LLM client for test case generation
+llm_generate:
+  model: ""              # Uses OPENAI_MODEL_NAME from .env
+  temperature: 0.7
+  max_tokens: 4096
+  max_retries: 3

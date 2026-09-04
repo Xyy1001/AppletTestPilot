@@ -1,0 +1,153 @@
+{
+  "pages": {
+    "/pages/index/index": {
+      "route": "/pages/index/index",
+      "semantic_role": "home",
+      "business_function": "product_browsing",
+      "risk_level": "low",
+      "visit_count": 13,
+      "first_seen_step": 0,
+      "last_seen_step": 20
+    },
+    "/pages/vendor/join": {
+      "route": "/pages/vendor/join",
+      "semantic_role": "form",
+      "business_function": "merchant_creation",
+      "risk_level": "low",
+      "visit_count": 5,
+      "first_seen_step": 1,
+      "last_seen_step": 5
+    },
+    "/pages/tabbar/user": {
+      "route": "/pages/tabbar/user",
+      "semantic_role": "profile",
+      "business_function": "merchant_center",
+      "risk_level": "low",
+      "visit_count": 3,
+      "first_seen_step": 14,
+      "last_seen_step": 16
+    }
+  },
+  "edges": [
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/vendor/join",
+      "action": "Click '创建商家'",
+      "semantic_type": "navigate",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Click '创建商家账户\n信息仅保存在本机，不会联网提交\n商家名称\n例如：某某品牌官方店\n手机号\n选填（11位数字）\n简介\n一句话介绍你的商家/主营产品\na\n保存'",
+      "semantic_type": "submit",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Type '测试商家' into '商家名称'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Type 'test' into 'field'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Type '13800138000' into '手机号'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/index/index",
+      "action": "Click '保存'",
+      "semantic_type": "submit",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/index/index",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 10,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/tabbar/user",
+      "action": "Switch to '我的'",
+      "semantic_type": "tab_switch",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/tabbar/user",
+      "action": "Switch to '/pages/index/index'",
+      "semantic_type": "tab_switch",
+      "success_count": 0,
+      "failure_count": 2,
+      "success_rate": 0.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/index/index",
+      "action": "Switch to '首页'",
+      "semantic_type": "tab_switch",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    }
+  ],
+  "failures": [
+    {
+      "step": 14,
+      "route": "/pages/tabbar/user",
+      "action": "Switch to '我的'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    },
+    {
+      "step": 15,
+      "route": "/pages/tabbar/user",
+      "action": "Switch to '/pages/index/index'",
+      "type": "unknown",
+      "message": ""
+    },
+    {
+      "step": 16,
+      "route": "/pages/tabbar/user",
+      "action": "Switch to '/pages/index/index'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    }
+  ],
+  "stats": {
+    "total_steps": 20,
+    "successful": 17,
+    "failed": 3,
+    "unique_pages": 3,
+    "total_edges": 10
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "task": {
+    "id": "task_2",
+    "description": "Scroll down"
+  },
+  "result": {
+    "task_completed": false,
+    "total_steps": 20,
+    "bug_count": 4,
+    "total_duration_s": 664.4,
+    "total_tokens": 6770
+  },
+  "coverage": {
+    "total_steps": 20,
+    "successful": 16,
+    "failed": 4,
+    "unique_pages": 3,
+    "total_pages_known": 3,
+    "total_edges": 11,
+    "failure_patterns": {
+      "assertion": 4
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 31.0
+    },
+    {
+      "step": 2,
+      "action": "Switch to '我的'",
+      "passed": false,
+      "duration_s": 65.6
+    },
+    {
+      "step": 3,
+      "action": "Click '上传产品'",
+      "passed": true,
+      "duration_s": 30.1
+    },
+    {
+      "step": 4,
+      "action": "Click '产品信息\n仅本地保存，不会联网上传\n产品名称\n例如：高对比暗色主题键盘\n价格\n例如：199.00\n描述\n介绍一下产品亮点、规格等\na\n图片\n选择图片\n未选择图片\n保存产品'",
+      "passed": true,
+      "duration_s": 33.7
+    },
+    {
+      "step": 5,
+      "action": "Type '测试产品' into '产品名称'",
+      "passed": true,
+      "duration_s": 23.5
+    },
+    {
+      "step": 6,
+      "action": "Type 'test' into 'field'",
+      "passed": true,
+      "duration_s": 22.4
+    },
+    {
+      "step": 7,
+      "action": "Type 'test' into 'field'",
+      "passed": true,
+      "duration_s": 25.7
+    },
+    {
+      "step": 8,
+      "action": "Type '199.00' into '价格'",
+      "passed": true,
+      "duration_s": 23.8
+    },
+    {
+      "step": 9,
+      "action": "Type 'test' into 'field'",
+      "passed": true,
+      "duration_s": 27.1
+    },
+    {
+      "step": 10,
+      "action": "Type 'test' into 'field'",
+      "passed": true,
+      "duration_s": 26.2
+    },
+    {
+      "step": 11,
+      "action": "Click '保存产品'",
+      "passed": false,
+      "duration_s": 39.7
+    },
+    {
+      "step": 12,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 50.5
+    },
+    {
+      "step": 13,
+      "action": "Click '上传产品'",
+      "passed": false,
+      "duration_s": 33.8
+    },
+    {
+      "step": 14,
+      "action": "Type '测试键盘' into '产品名称'",
+      "passed": true,
+      "duration_s": 21.2
+    },
+    {
+      "step": 15,
+      "action": "Type '99.00' into '价格'",
+      "passed": true,
+      "duration_s": 18.9
+    },
+    {
+      "step": 16,
+      "action": "Type 'test' into 'field'",
+      "passed": true,
+      "duration_s": 22.1
+    },
+    {
+      "step": 17,
+      "action": "Type '测试键盘' into '产品名称'",
+      "passed": true,
+      "duration_s": 29.8
+    },
+    {
+      "step": 18,
+      "action": "Click '保存产品'",
+      "passed": false,
+      "duration_s": 55.0
+    },
+    {
+      "step": 19,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 42.3
+    },
+    {
+      "step": 20,
+      "action": "Click '上传产品'",
+      "passed": true,
+      "duration_s": 20.5
+    }
+  ]
+}

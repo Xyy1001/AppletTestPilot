@@ -1,0 +1,212 @@
+page {
+  background: #0B0F1A;
+  color: #F8FAFC;
+  font-size: 30rpx;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  background: #0B0F1A;
+}
+
+.container {
+  padding: 24rpx;
+}
+
+.card {
+  background: #111C33;
+  border: 1rpx solid rgba(148, 163, 184, 0.22);
+  border-radius: 24rpx;
+  padding: 24rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #94A3B8;
+}
+
+.text {
+  font-size: 30rpx;
+  color: #F8FAFC;
+}
+
+.muted {
+  color: #94A3B8;
+}
+
+.danger {
+  color: #F43F5E;
+}
+
+.price {
+  color: #22D3EE;
+  font-weight: 700;
+}
+
+.btn {
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 22rpx;
+  padding: 0 28rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #7C3AED 0%, #22D3EE 100%);
+  color: #0B0F1A;
+  font-weight: 700;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #F8FAFC;
+  border: 1rpx solid rgba(148, 163, 184, 0.35);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #F43F5E 0%, #F97316 100%);
+  color: #0B0F1A;
+  font-weight: 700;
+}
+
+.input {
+  background: #0F172A;
+  border: 1rpx solid rgba(148, 163, 184, 0.22);
+  border-radius: 18rpx;
+  padding: 22rpx 20rpx;
+  color: #F8FAFC;
+  font-size: 28rpx;
+}
+
+.input::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 24rpx;
+  color: #0B0F1A;
+  background: #22D3EE;
+  font-weight: 600;
+}
+
+.chip-purple {
+  background: #7C3AED;
+  color: #0B0F1A;
+}
+
+.divider {
+  height: 1rpx;
+  background: rgba(148, 163, 184, 0.22);
+  margin: 18rpx 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14rpx;
+}
+.grid-2 .card {
+  padding: 16rpx;
+  border-radius: 18rpx;
+}
+
+.tap {
+  transform: translateZ(0);
+}
+
+/* Ensure transitions animate smoothly in both directions */
+button,
+.btn {
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, opacity 0.15s ease-out !important;
+}
+
+/* =================================================================
+   TAP FEEDBACK — CSS keyframes + JS particles + button hover-class
+   ================================================================= */
+
+@keyframes sparkFly {
+  0%   { transform: translate(-50%, -50%) scale(0); opacity: 0.95; }
+  50%  { transform: translate(-50%, -50%) scale(1.8); opacity: 0.7; }
+  100% { transform: translate(-50%, -50%) scale(3.0); opacity: 0; }
+}
+
+@keyframes rippleExpand {
+  0%   { width: 8rpx; height: 8rpx; opacity: 0.9; }
+  100% { width: 160rpx; height: 160rpx; opacity: 0; }
+}
+
+/*
+ * Button has built-in hover-class="button-hover" in WeChat mini programs.
+ * Override it to produce a glow pulse on every press.
+ */
+.button-hover {
+  transform: scale(0.94) !important;
+  box-shadow: 0 0 40rpx rgba(124, 58, 237, 0.95), 0 0 80rpx rgba(34, 211, 238, 0.6) !important;
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Same for any element with hover-class="btn-pressed" (manual opt-in) */
+.btn-pressed {
+  transform: scale(0.94) !important;
+  box-shadow: 0 0 40rpx rgba(124, 58, 237, 0.95), 0 0 80rpx rgba(34, 211, 238, 0.6) !important;
+  opacity: 0.85 !important;
+}
+
+.tap-pressed {
+  transform: scale(0.95) !important;
+  opacity: 0.65 !important;
+}
+
+/* =================================================================
+   RIPPLE + SPARK canvas — drawn by app.tapFeedback()
+   ================================================================= */
+.tap-ripple-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.tap-ripple-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 4rpx solid rgba(124, 58, 237, 0.9);
+  background: rgba(124, 58, 237, 0.12);
+  transform: translate(-50%, -50%);
+}
+
+.tap-spark {
+  position: absolute;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cart/cart",
+    "pages/tabbar/user",
+    "pages/product/detail",
+    "pages/vendor/join",
+    "pages/vendor/product_edit"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7C3AED",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "商城运营和推广SEO",
+    "backgroundColor": "#0B0F1A"
+  },
+  "tabBar": {
+    "color": "#94A3B8",
+    "selectedColor": "#22D3EE",
+    "backgroundColor": "#0F172A",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/icon-cart.png",
+        "selectedIconPath": "images/icon-cart-active.png"
+      },
+      {
+        "pagePath": "pages/tabbar/user",
+        "text": "我的",
+        "iconPath": "images/sculpture.png",
+        "selectedIconPath": "images/sculpture.png"
+      }
+    ]
+  },
+  "lazyCodeLoading": "requiredComponents",
+  "__usePrivacyCheck__": false
+}

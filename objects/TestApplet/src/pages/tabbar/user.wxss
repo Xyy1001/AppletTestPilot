@@ -1,0 +1,116 @@
+.mt {
+  margin-top: 18rpx;
+}
+
+.s-title {
+  font-size: 34rpx;
+}
+
+.merchant-name {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #22D3EE;
+}
+
+.p-row {
+  display: flex;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid rgba(148, 163, 184, 0.18);
+}
+
+.p-row:last-child {
+  border-bottom: none;
+}
+
+.p-left {
+  margin-right: 16rpx;
+}
+
+.p-cover {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 18rpx;
+  background: #0F172A;
+}
+
+.p-mid {
+  flex: 1;
+  min-width: 0;
+}
+
+.p-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #F8FAFC;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 8rpx;
+}
+
+.p-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 16rpx;
+}
+
+.p-action {
+  padding: 10rpx 14rpx;
+  border-radius: 16rpx;
+  border: 1rpx solid rgba(148, 163, 184, 0.22);
+  text-align: center;
+  color: #F8FAFC;
+  font-size: 26rpx;
+  margin: 6rpx 0;
+  background: rgba(124, 58, 237, 0.12);
+}
+
+.fav-row {
+  display: flex;
+  align-items: center;
+  padding: 14rpx 0;
+  border-bottom: 1rpx solid rgba(148, 163, 184, 0.18);
+}
+
+.fav-row:last-child {
+  border-bottom: none;
+}
+
+.fav-cover {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 18rpx;
+  background: #0F172A;
+  margin-right: 14rpx;
+}
+
+.fav-mid {
+  flex: 1;
+  min-width: 0;
+}
+
+.fav-title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #F8FAFC;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 6rpx;
+}
+
+.arrow {
+  width: 28rpx;
+  height: 28rpx;
+  opacity: 0.55;
+}
+
+.kefu {
+  height: 72rpx;
+  line-height: 72rpx;
+  padding: 0 24rpx;
+  border-radius: 18rpx;
+  font-size: 28rpx;
+}
+

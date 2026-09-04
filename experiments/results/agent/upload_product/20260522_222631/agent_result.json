@@ -1,0 +1,128 @@
+{
+  "task": {
+    "id": "upload_product",
+    "name": "Upload Product",
+    "difficulty": "easy",
+    "setup": "launch_home_with_merchant"
+  },
+  "result": {
+    "task_completed": false,
+    "total_steps": 10,
+    "successful_steps": 9,
+    "failed_steps": 1,
+    "bug_count": 1,
+    "total_duration_s": 201.9,
+    "total_tokens": 1668
+  },
+  "coverage": {
+    "total_steps": 10,
+    "successful": 9,
+    "failed": 1,
+    "unique_pages": 2,
+    "total_pages_known": 2,
+    "total_edges": 3,
+    "failure_patterns": {
+      "assertion": 1
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 17.5,
+      "tokens": 0
+    },
+    {
+      "step": 2,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.0,
+      "tokens": 0
+    },
+    {
+      "step": 3,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 18.2,
+      "tokens": 0
+    },
+    {
+      "step": 4,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 16.3,
+      "tokens": 0
+    },
+    {
+      "step": 5,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 17.1,
+      "tokens": 0
+    },
+    {
+      "step": 6,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.1,
+      "tokens": 0
+    },
+    {
+      "step": 7,
+      "action": "Go back",
+      "reasoning": "当前意外停留在创建商家页面，而任务要求使用已存在的商家。应返回首页，然后从首页进入产品编辑页面。",
+      "passed": false,
+      "oracle_layer": "semantic",
+      "duration_s": 28.1,
+      "tokens": 834
+    },
+    {
+      "step": 8,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.6,
+      "tokens": 0
+    },
+    {
+      "step": 9,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 22.2,
+      "tokens": 0
+    },
+    {
+      "step": 10,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 18.7,
+      "tokens": 0
+    }
+  ],
+  "failures": [
+    {
+      "step": 7,
+      "category": "state_inconsistency",
+      "severity": "medium",
+      "hypothesis": "Page state after 'Go back' is inconsistent with expectation"
+    }
+  ]
+}

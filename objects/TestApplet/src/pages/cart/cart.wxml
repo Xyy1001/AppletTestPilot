@@ -1,0 +1,52 @@
+<view class="tap-ripple-overlay" wx:if="{{_tapFx}}">
+  <block wx:for="{{_tapFx.sparks}}" wx:key="id">
+    <view class="tap-spark"
+      style="left: {{_tapFx.x}}px; top: {{_tapFx.y}}px; background: {{item.c}}; animation: sparkFly 0.4s ease-out forwards; animation-delay: {{item.d}}s;"
+    ></view>
+  </block>
+  <view class="tap-ripple-ring"
+    style="left: {{_tapFx.x}}px; top: {{_tapFx.y}}px; animation: rippleExpand 0.45s ease-out forwards;"
+  ></view>
+</view>
+<view class="page" bindtap="_tap">
+  <view class="container">
+    <view class="card" wx:if="{{items.length === 0}}">
+      <view class="title">购物车为空</view>
+      <view class="subtitle">去首页挑选一些商品吧</view>
+    </view>
+
+    <view wx:if="{{items.length > 0}}">
+      <view class="card item" wx:for="{{items}}" wx:key="productId">
+        <view class="row">
+          <image class="cover tap" src="{{item.cover || '/images/cart.jpg'}}" mode="aspectFill" data-id="{{item.productId}}" bindtap="onTapProduct"></image>
+          <view class="info">
+            <view class="name">{{item.title}}</view>
+            <view class="row-between">
+              <view class="price">¥ {{item.price}}</view>
+              <view class="danger tap remove" data-id="{{item.productId}}" bindtap="onRemove">移除</view>
+            </view>
+            <view class="row-between">
+              <view class="subtitle">小计 ¥ {{item.subtotal}}</view>
+              <view class="qty">
+                <view class="qty-btn tap" data-id="{{item.productId}}" bindtap="onMinus">-</view>
+                <view class="qty-value">{{item.qty}}</view>
+                <view class="qty-btn tap" data-id="{{item.productId}}" bindtap="onPlus">+</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="card footer">
+        <view class="row-between">
+          <view>
+            <view class="subtitle">合计</view>
+            <view class="title">¥ {{total}}</view>
+          </view>
+          <button class="btn btn-danger" bindtap="onClear">清空</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

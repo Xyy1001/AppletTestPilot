@@ -1,0 +1,51 @@
+<view class="tap-ripple-overlay" wx:if="{{_tapFx}}">
+  <block wx:for="{{_tapFx.sparks}}" wx:key="id">
+    <view class="tap-spark"
+      style="left: {{_tapFx.x}}px; top: {{_tapFx.y}}px; background: {{item.c}}; animation: sparkFly 0.4s ease-out forwards; animation-delay: {{item.d}}s;"
+    ></view>
+  </block>
+  <view class="tap-ripple-ring"
+    style="left: {{_tapFx.x}}px; top: {{_tapFx.y}}px; animation: rippleExpand 0.45s ease-out forwards;"
+  ></view>
+</view>
+<view class="page" bindtap="_tap">
+  <view class="container">
+    <view class="card">
+      <view class="title">产品信息</view>
+      <view class="subtitle">仅本地保存，不会联网上传</view>
+      <view class="divider"></view>
+
+      <view class="field">
+        <view class="label">产品名称</view>
+        <input class="input" placeholder="例如：高对比暗色主题键盘" value="{{title}}" bindinput="onTitle" />
+      </view>
+
+      <view class="field">
+        <view class="label">价格</view>
+        <input class="input" placeholder="例如：199.00" value="{{price}}" bindinput="onPrice" type="digit" />
+      </view>
+
+      <view class="field">
+        <view class="label">描述</view>
+        <textarea class="textarea" placeholder="介绍一下产品亮点、规格等" value="{{desc}}" bindinput="onDesc" maxlength="500"></textarea>
+      </view>
+
+      <view class="field">
+        <view class="row-between">
+          <view class="label">图片</view>
+          <button class="btn btn-ghost add-btn" bindtap="onChooseImages">选择图片</button>
+        </view>
+        <view class="img-grid" wx:if="{{images.length > 0}}">
+          <view class="img-item" wx:for="{{images}}" wx:key="*this">
+            <image class="img" src="{{item}}" mode="aspectFill"></image>
+            <view class="img-del tap" data-idx="{{index}}" bindtap="onRemoveImage">×</view>
+          </view>
+        </view>
+        <view class="subtitle" wx:else>未选择图片</view>
+      </view>
+
+      <button class="btn btn-primary" bindtap="onSave">保存产品</button>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,92 @@
+{
+  "pages": {
+    "/pages/index/index": {
+      "route": "/pages/index/index",
+      "semantic_role": "home",
+      "business_function": "product_browsing",
+      "risk_level": "low",
+      "visit_count": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 4
+    },
+    "/pages/vendor/product_edit": {
+      "route": "/pages/vendor/product_edit",
+      "semantic_role": "form",
+      "business_function": "product_management",
+      "risk_level": "high",
+      "visit_count": 3,
+      "first_seen_step": 1,
+      "last_seen_step": 5
+    }
+  },
+  "edges": [
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Click '去上传产品'",
+      "semantic_type": "navigate",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/product_edit",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/product_edit",
+      "dst": "/pages/index/index",
+      "action": "Go back",
+      "semantic_type": "back",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/index/index",
+      "action": "Verify page state",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Click '上传产品'",
+      "semantic_type": "navigate",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    }
+  ],
+  "failures": [
+    {
+      "step": 1,
+      "route": "/pages/vendor/product_edit",
+      "action": "Click '去上传产品'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    },
+    {
+      "step": 3,
+      "route": "/pages/index/index",
+      "action": "Go back",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    }
+  ],
+  "stats": {
+    "total_steps": 5,
+    "successful": 3,
+    "failed": 2,
+    "unique_pages": 2,
+    "total_edges": 5
+  }
+}

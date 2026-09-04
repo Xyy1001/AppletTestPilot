@@ -1,0 +1,27 @@
+.field {
+  margin-bottom: 18rpx;
+}
+
+.label {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #94A3B8;
+  margin-bottom: 10rpx;
+}
+
+.textarea {
+  background: #0F172A;
+  border: 1rpx solid rgba(148, 163, 184, 0.22);
+  border-radius: 18rpx;
+  padding: 18rpx 20rpx;
+  color: #F8FAFC;
+  font-size: 28rpx;
+  min-height: 180rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.textarea::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+

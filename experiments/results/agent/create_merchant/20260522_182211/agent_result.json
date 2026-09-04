@@ -1,0 +1,110 @@
+{
+  "task": {
+    "id": "create_merchant",
+    "name": "Create Merchant Account",
+    "difficulty": "easy",
+    "setup": "launch_home"
+  },
+  "result": {
+    "task_completed": false,
+    "total_steps": 8,
+    "successful_steps": 7,
+    "failed_steps": 1,
+    "bug_count": 1,
+    "total_duration_s": 171.0,
+    "total_tokens": 2964
+  },
+  "coverage": {
+    "total_steps": 8,
+    "successful": 7,
+    "failed": 1,
+    "unique_pages": 2,
+    "total_pages_known": 2,
+    "total_edges": 4,
+    "failure_patterns": {
+      "assertion": 1
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "Click '去创建商家'",
+      "reasoning": "首页提示去创建商家，点击该按钮可进入商家入驻流程。",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 21.4,
+      "tokens": 638
+    },
+    {
+      "step": 2,
+      "action": "Type '美味小吃店' into '例如：某某品牌官方店'",
+      "reasoning": "填写商家名称字段，使用真实测试数据",
+      "passed": false,
+      "oracle_layer": "semantic",
+      "duration_s": 23.0,
+      "tokens": 844
+    },
+    {
+      "step": 3,
+      "action": "Verify page state",
+      "reasoning": "",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 17.8,
+      "tokens": 0
+    },
+    {
+      "step": 4,
+      "action": "Verify page state",
+      "reasoning": "",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 22.2,
+      "tokens": 0
+    },
+    {
+      "step": 5,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 18.2,
+      "tokens": 0
+    },
+    {
+      "step": 6,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.5,
+      "tokens": 0
+    },
+    {
+      "step": 7,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 16.8,
+      "tokens": 0
+    },
+    {
+      "step": 8,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 19.8,
+      "tokens": 0
+    }
+  ],
+  "failures": [
+    {
+      "step": 2,
+      "category": "state_inconsistency",
+      "severity": "medium",
+      "hypothesis": "Page state after 'Type '美味小吃店' into '例如：某某品牌官方店'' is inconsistent with expectation"
+    }
+  ]
+}

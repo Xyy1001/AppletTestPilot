@@ -1,0 +1,134 @@
+{
+  "task": {
+    "id": "edit_product",
+    "name": "Edit Product",
+    "difficulty": "medium",
+    "setup": "launch_home_with_merchant_and_product"
+  },
+  "result": {
+    "task_completed": false,
+    "total_steps": 10,
+    "successful_steps": 8,
+    "failed_steps": 2,
+    "bug_count": 2,
+    "total_duration_s": 283.8,
+    "total_tokens": 4582
+  },
+  "coverage": {
+    "total_steps": 10,
+    "successful": 8,
+    "failed": 2,
+    "unique_pages": 2,
+    "total_pages_known": 2,
+    "total_edges": 4,
+    "failure_patterns": {
+      "assertion": 2
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 25.6,
+      "tokens": 0
+    },
+    {
+      "step": 2,
+      "action": "Click '我的产品'",
+      "reasoning": "The current page shows '我的产品' with 0 products, but we need to edit an existing product. Clicking '我的产品' may lead to a product list page where we can see if there are any products to edit.",
+      "passed": true,
+      "oracle_layer": "structural",
+      "duration_s": 27.2,
+      "tokens": 0
+    },
+    {
+      "step": 3,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 23.7,
+      "tokens": 0
+    },
+    {
+      "step": 4,
+      "action": "Click '我的产品'",
+      "reasoning": "To see existing products, click on '我的产品' (My Products) to go to the product list page.",
+      "passed": false,
+      "oracle_layer": "semantic",
+      "duration_s": 33.5,
+      "tokens": 835
+    },
+    {
+      "step": 5,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 27.8,
+      "tokens": 0
+    },
+    {
+      "step": 6,
+      "action": "Verify page state",
+      "reasoning": "",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 28.4,
+      "tokens": 0
+    },
+    {
+      "step": 7,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 24.9,
+      "tokens": 0
+    },
+    {
+      "step": 8,
+      "action": "Scroll down",
+      "reasoning": "fallback: scroll for more content",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 23.9,
+      "tokens": 0
+    },
+    {
+      "step": 9,
+      "action": "Click '我的产品'",
+      "reasoning": "当前页面显示产品数量为0，但任务要求编辑已有产品。点击'我的产品'进入产品列表页面，查看是否有已上传的产品。",
+      "passed": false,
+      "oracle_layer": "semantic",
+      "duration_s": 34.4,
+      "tokens": 852
+    },
+    {
+      "step": 10,
+      "action": "Click '上传产品'",
+      "reasoning": "当前页面显示没有产品，需要先上传一个产品才能编辑。点击'上传产品'进入上传页面，创建产品后再编辑。",
+      "passed": true,
+      "oracle_layer": "semantic",
+      "duration_s": 21.4,
+      "tokens": 604
+    }
+  ],
+  "failures": [
+    {
+      "step": 4,
+      "category": "state_inconsistency",
+      "severity": "medium",
+      "hypothesis": "Page state after 'Click '我的产品'' is inconsistent with expectation"
+    },
+    {
+      "step": 9,
+      "category": "state_inconsistency",
+      "severity": "medium",
+      "hypothesis": "Page state after 'Click '我的产品'' is inconsistent with expectation"
+    }
+  ]
+}

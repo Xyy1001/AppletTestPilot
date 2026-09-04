@@ -1,0 +1,37 @@
+<view class="tap-ripple-overlay" wx:if="{{_tapFx}}">
+  <block wx:for="{{_tapFx.sparks}}" wx:key="id">
+    <view class="tap-spark"
+      style="left: {{_tapFx.x}}px; top: {{_tapFx.y}}px; background: {{item.c}}; animation: sparkFly 0.4s ease-out forwards; animation-delay: {{item.d}}s;"
+    ></view>
+  </block>
+  <view class="tap-ripple-ring"
+    style="left: {{_tapFx.x}}px; top: {{_tapFx.y}}px; animation: rippleExpand 0.45s ease-out forwards;"
+  ></view>
+</view>
+<view class="page" bindtap="_tap">
+  <view class="container">
+    <view class="card">
+      <view class="title">创建商家账户</view>
+      <view class="subtitle">信息仅保存在本机，不会联网提交</view>
+      <view class="divider"></view>
+
+      <view class="field">
+        <view class="label">商家名称</view>
+        <input class="input" placeholder="例如：某某品牌官方店" value="{{name}}" bindinput="onName" />
+      </view>
+
+      <view class="field">
+        <view class="label">手机号</view>
+        <input class="input" placeholder="选填（11位数字）" type="number" maxlength="11" value="{{phone}}" bindinput="onPhone" />
+      </view>
+
+      <view class="field">
+        <view class="label">简介</view>
+        <textarea class="textarea" placeholder="一句话介绍你的商家/主营产品" value="{{intro}}" bindinput="onIntro" maxlength="200"></textarea>
+      </view>
+
+      <button class="btn btn-primary" bindtap="onSave">保存</button>
+    </view>
+  </view>
+</view>
+

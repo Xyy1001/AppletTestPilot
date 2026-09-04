@@ -1,0 +1,67 @@
+{
+  "pages": {
+    "/pages/vendor/join": {
+      "route": "/pages/vendor/join",
+      "semantic_role": "form",
+      "business_function": "merchant_creation",
+      "risk_level": "low",
+      "visit_count": 7,
+      "first_seen_step": 0,
+      "last_seen_step": 6
+    },
+    "/pages/index/index": {
+      "route": "/pages/index/index",
+      "semantic_role": "home",
+      "business_function": "product_browsing",
+      "risk_level": "low",
+      "visit_count": 4,
+      "first_seen_step": 7,
+      "last_seen_step": 10
+    }
+  },
+  "edges": [
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 6,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/index/index",
+      "action": "Go back",
+      "semantic_type": "back",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/index/index",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 3,
+      "failure_count": 0,
+      "success_rate": 1.0
+    }
+  ],
+  "failures": [
+    {
+      "step": 7,
+      "route": "/pages/index/index",
+      "action": "Go back",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    }
+  ],
+  "stats": {
+    "total_steps": 10,
+    "successful": 9,
+    "failed": 1,
+    "unique_pages": 2,
+    "total_edges": 3
+  }
+}

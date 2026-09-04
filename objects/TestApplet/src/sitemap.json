@@ -1,0 +1,9 @@
+{
+  "desc": "商城运营和推广SEO",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

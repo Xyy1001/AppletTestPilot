@@ -1,0 +1,95 @@
+{
+  "pages": {
+    "/pages/index/index": {
+      "route": "/pages/index/index",
+      "semantic_role": "home",
+      "business_function": "product_browsing",
+      "risk_level": "low",
+      "visit_count": 3,
+      "first_seen_step": 0,
+      "last_seen_step": 8
+    },
+    "/pages/vendor/join": {
+      "route": "/pages/vendor/join",
+      "semantic_role": "form",
+      "business_function": "merchant_creation",
+      "risk_level": "low",
+      "visit_count": 6,
+      "first_seen_step": 1,
+      "last_seen_step": 6
+    }
+  },
+  "edges": [
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/vendor/join",
+      "action": "Click '去创建商家'",
+      "semantic_type": "navigate",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Type '测试商家' into '商家名称'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Type '13800138000' into '手机号'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Verify page state",
+      "semantic_type": "interact",
+      "success_count": 2,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/vendor/join",
+      "action": "Type '测试商家主营各类产品' into '简介'",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/vendor/join",
+      "dst": "/pages/index/index",
+      "action": "Click '保存'",
+      "semantic_type": "submit",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/index/index",
+      "dst": "/pages/index/index",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    }
+  ],
+  "failures": [],
+  "stats": {
+    "total_steps": 8,
+    "successful": 8,
+    "failed": 0,
+    "unique_pages": 2,
+    "total_edges": 7
+  }
+}

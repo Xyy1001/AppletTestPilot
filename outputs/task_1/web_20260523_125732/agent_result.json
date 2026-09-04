@@ -1,0 +1,147 @@
+{
+  "task": {
+    "id": "task_1",
+    "description": "Click '创建商家'"
+  },
+  "result": {
+    "task_completed": false,
+    "total_steps": 20,
+    "bug_count": 2,
+    "total_duration_s": 612.4,
+    "total_tokens": 7278
+  },
+  "coverage": {
+    "total_steps": 20,
+    "successful": 17,
+    "failed": 3,
+    "unique_pages": 3,
+    "total_pages_known": 3,
+    "total_edges": 10,
+    "failure_patterns": {
+      "assertion": 2,
+      "unknown": 1
+    }
+  },
+  "steps": [
+    {
+      "step": 1,
+      "action": "Click '创建商家'",
+      "passed": true,
+      "duration_s": 35.2
+    },
+    {
+      "step": 2,
+      "action": "Click '创建商家账户\n信息仅保存在本机，不会联网提交\n商家名称\n例如：某某品牌官方店\n手机号\n选填（11位数字）\n简介\n一句话介绍你的商家/主营产品\na\n保存'",
+      "passed": true,
+      "duration_s": 30.4
+    },
+    {
+      "step": 3,
+      "action": "Type '测试商家' into '商家名称'",
+      "passed": true,
+      "duration_s": 28.3
+    },
+    {
+      "step": 4,
+      "action": "Type 'test' into 'field'",
+      "passed": true,
+      "duration_s": 20.6
+    },
+    {
+      "step": 5,
+      "action": "Type '13800138000' into '手机号'",
+      "passed": true,
+      "duration_s": 21.4
+    },
+    {
+      "step": 6,
+      "action": "Click '保存'",
+      "passed": true,
+      "duration_s": 29.7
+    },
+    {
+      "step": 7,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 21.1
+    },
+    {
+      "step": 8,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 31.6
+    },
+    {
+      "step": 9,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 26.4
+    },
+    {
+      "step": 10,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 30.5
+    },
+    {
+      "step": 11,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 26.9
+    },
+    {
+      "step": 12,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 27.3
+    },
+    {
+      "step": 13,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 32.5
+    },
+    {
+      "step": 14,
+      "action": "Switch to '我的'",
+      "passed": false,
+      "duration_s": 53.1
+    },
+    {
+      "step": 15,
+      "action": "Switch to '/pages/index/index'",
+      "passed": true,
+      "duration_s": 31.4
+    },
+    {
+      "step": 16,
+      "action": "Switch to '/pages/index/index'",
+      "passed": false,
+      "duration_s": 25.2
+    },
+    {
+      "step": 17,
+      "action": "Switch to '首页'",
+      "passed": true,
+      "duration_s": 31.4
+    },
+    {
+      "step": 18,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 23.7
+    },
+    {
+      "step": 19,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 35.9
+    },
+    {
+      "step": 20,
+      "action": "Scroll down",
+      "passed": true,
+      "duration_s": 22.6
+    }
+  ]
+}

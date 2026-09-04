@@ -1,0 +1,83 @@
+{
+  "pages": {
+    "/pages/tabbar/user": {
+      "route": "/pages/tabbar/user",
+      "semantic_role": "profile",
+      "business_function": "merchant_center",
+      "risk_level": "low",
+      "visit_count": 10,
+      "first_seen_step": 0,
+      "last_seen_step": 9
+    },
+    "/pages/vendor/product_edit": {
+      "route": "/pages/vendor/product_edit",
+      "semantic_role": "form",
+      "business_function": "product_management",
+      "risk_level": "high",
+      "visit_count": 1,
+      "first_seen_step": 10,
+      "last_seen_step": 10
+    }
+  },
+  "edges": [
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/tabbar/user",
+      "action": "Scroll down",
+      "semantic_type": "interact",
+      "success_count": 5,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/tabbar/user",
+      "action": "Click '我的产品'",
+      "semantic_type": "interact",
+      "success_count": 3,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/tabbar/user",
+      "action": "Verify page state",
+      "semantic_type": "interact",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    },
+    {
+      "src": "/pages/tabbar/user",
+      "dst": "/pages/vendor/product_edit",
+      "action": "Click '上传产品'",
+      "semantic_type": "navigate",
+      "success_count": 1,
+      "failure_count": 0,
+      "success_rate": 1.0
+    }
+  ],
+  "failures": [
+    {
+      "step": 4,
+      "route": "/pages/tabbar/user",
+      "action": "Click '我的产品'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    },
+    {
+      "step": 9,
+      "route": "/pages/tabbar/user",
+      "action": "Click '我的产品'",
+      "type": "assertion",
+      "message": "Could not generate valid assertion code"
+    }
+  ],
+  "stats": {
+    "total_steps": 10,
+    "successful": 8,
+    "failed": 2,
+    "unique_pages": 2,
+    "total_edges": 4
+  }
+}
